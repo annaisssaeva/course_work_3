@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    exercise3
+
+{% endblock %}
+
+{% block content %}
+
+
+ <div class="left" align="middle">
+        <div class="button"  style="margin-top: 30px;"><a href="/exercise" style="color:#062452">буквы</a></div>
+     <br>
+        <div class="button" style="margin-top: 30px;"><a href="/exercise2" style="color:#062452">слоги</a></div>
+        <br>
+     <div class="button" style="margin-top: 30px; outline: .3em solid #3B5888;"><a href="/exercise3" style="color:#062452">слова</a></div>
+        <div class="button" style="margin-top: 30px"><a href="/exercise4" style="color:#062452">предложения</a></div>
+ </div>
+
+
+<div class="right">
+
+<a align="middle">
+
+<br>
+     <!--<div class="txt1"> Упражнения по буквам</div>-->
+    <div class="txt1">Введите слово <div style="color:red; font-size:60px">{{ stim }} </div></div>
+        <br>
+
+
+    <!--<form action="" method="POST" >
+     скрытый параметр
+    <input type="hidden" name="index" value="say_stim">
+    <input type="submit" class="btn btn-dark" value="Нажать 1">
+    </form>-->
+
+
+    <form action="" method="POST">
+        <p>
+	    <input type="text" name="exercise" style="text-align:center;">
+	</p>
+    </form>
+
+    {% if message %}
+        <p class="txt1" style="color:#2198C3">{{ message }}</p>
+    {% endif %}
+
+
+
+
+</a>
+<br>
+<br>
+<div class="txtb" align="middle"> <strong>Положение пальцев</strong></div>
+ <div class="txt1" style="border-right:200px;">
+     <strong>Левая рука</strong><br>
+     указательный — а<br>
+     средний — в<br>
+     безымянный — ы<br>
+     мизинец — ф
+ </div>
+<br>
+<br>
+<div class="txt1" style="border-left:6000px;">
+    <strong>Правая рука</strong><br>
+     указательный — о<br>
+     средний — л<br>
+     безымянный — д<br>
+     мизинец — ж<br>
+</div>
+
+
+
+</div>
+{% endblock %}

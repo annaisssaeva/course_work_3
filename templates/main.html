@@ -1,0 +1,81 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    main
+
+{% endblock %}
+
+{% block content %}
+
+    <div class="txtb" align="middle"> <strong>Упражнения по печати для слабовидящих</strong></div>
+<br>
+    <div class="txt1">На этом сайте вы можете попрактиковаться и улучшить свои навыки печати на клавиатуре.</div>
+<br>
+<br>
+
+
+    {% if current_user.is_authenticated %}
+<div align="middle">
+    <h1 class="txt1" align="middle">Вы вошли в аккаунт <strong>{{ username }}</strong></h1>
+    <br>
+    <a href="/logout" class="txt1" >Выйти из аккаунта</a>
+    </div>
+    {% else %}
+    <h1 class="txt1" align="middle">Вы не вошли в аккаунт </h1>
+<nav>
+<div style="text-align: center;">
+        <a href="/login" class="txt1" align="middle">Войти &nbsp;</a>
+        <a href="/register" class="txt1" align="middle">&nbsp; Создать аккаунт</a>
+    </nav>
+    {% endif %}
+</div>
+
+
+
+    <div class="txtb" align="middle"> <strong>Информация о сайте:</strong></div>
+<div class="txtb" align="middle"> Слушать:
+<audio autoplay controls="controls">
+     <source src="static/audio/main_instr.wav" type="audio/wav"/>
+    </audio>
+</div>
+
+ <div class="txt1"> У нас представлен набор упражнений, адаптированных для слабовидящих и людей с нарушениями зрения, которые нацелены
+     на улучшение скорости печати на клавиатуре.
+     <br>
+     Упражнения разделены на 4 группы: "буквы", где надо вводить по одной букве, "слоги", в которых
+ вводить надо слоги, "слова" и "предложения", где печатать надо слова и целые предложения соответственно. Предполагается, что упражнения выполняются именно в таком порядке, однако вы всегда можете вернуться к предыдущему разделу или заглянуть в следующий.
+     <br>
+ Рекомендуем зарегистрироваться – для этого понадобится придумать только псевдоним и пароль, зато так вы сможете отслеживать, сколько времени провели за разными упражнениями. Это можно сделать в разделе «Авторизация».
+  <br>
+     Для наиболее эффективного запоминания способов печати, руки на клавиатуре стоит расположить особым образом, а уже из этих начальных позиций двигать пальцы на нужные клавиши клавиатуры. Вот как стоит расположить ваши пальцы:
+ </div>
+
+
+
+
+ <div class="txt1" style="border-right:200px;">
+     <strong>Левая рука</strong><br>
+     указательный — а<br>
+     средний — в<br>
+     безымянный — ы<br>
+     мизинец — ф
+ </div>
+<br>
+<br>
+<div class="txt1" style="border-left:6000px;">
+    <strong>Правая рука</strong><br>
+     указательный — о<br>
+     средний — л<br>
+     безымянный — д<br>
+     мизинец — ж<br>
+</div>
+
+<div class="txt1">
+    Картинка с расположением пальцев для наглядности:
+</div>
+
+<img src="static/images/scale_1200-5.jpeg" align="middle" style="margin-left: 100px;">
+
+
+{% endblock %}
